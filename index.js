@@ -12,7 +12,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/greet/:name', function(req, res) {
-  var names = ['JD', 'Tim', 'Spencer'];
+  var names = ['Vi', 'Tim', 'Nick', 'Jim'];
 
   var name = req.params.name;
 
@@ -20,9 +20,9 @@ app.get('/greet/:name', function(req, res) {
     res.render('greet', {
       name: req.params.name
     });
+  } else {
+    res.status(404).render('404');
   }
-
-  res.status(404).send('Not found!');
 
 });
 
