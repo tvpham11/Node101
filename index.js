@@ -52,8 +52,9 @@ db.loadDatabase(function(err) {
   if (err) {
     console.log('Error loading database', err);
   } else {
-    console.log('Listening on localhost:8025');
-    app.listen(8025);
+    var port = process.env.PORT || 8025;
+    console.log('Listening on localhost:' + port);
+    app.listen(port);
   }
 });
 
